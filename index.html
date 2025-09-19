@@ -17,7 +17,7 @@
       h6 {
         font-family: "Raleway", sans-serif;
       }
-      #todo_list {
+      [name="my-tag"] {
         cursor: pointer;
       }
     </style>
@@ -96,21 +96,18 @@
 
       <!-- First Photo Grid-->
       <div class="w3-row-padding">
-        <div class="w3-third w3-container w3-margin-bottom" id="todo_list" data-url="./todo_list/todo.html">
+        <div class="w3-third w3-container w3-margin-bottom" name="my-tag" data-url="./todo_list/todo.html">
           <img src="./img/todoList.png" alt="Norway" style="width: 100%" class="w3-hover-opacity" />
           <div class="w3-container w3-white">
             <p><b>todoList</b></p>
             <p>설명 추가예정</p>
           </div>
         </div>
-        <div class="w3-third w3-container w3-margin-bottom">
-          <img src="/w3images/lights.jpg" alt="Norway" style="width: 100%" class="w3-hover-opacity" />
+        <div class="w3-third w3-container w3-margin-bottom" name="my-tag" data-url="./WS_03_template/index.html">
+          <img src="./img/kostaBank.png" alt="Norway" style="width: 100%" class="w3-hover-opacity" />
           <div class="w3-container w3-white">
-            <p><b>Lorem Ipsum</b></p>
-            <p>
-              Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue
-              gravida diam non fringilla.
-            </p>
+            <p><b>kostaBank</b></p>
+            <p>설명 추가예정</p>
           </div>
         </div>
         <div class="w3-third w3-container">
@@ -377,9 +374,11 @@
         document.getElementById("mySidebar").style.display = "none";
         document.getElementById("myOverlay").style.display = "none";
       }
-      document.getElementById("todo_list").addEventListener("click", (e) => {
-        let url = document.getElementById("todo_list").dataset.url;
-        location.href = url;
+
+      document.getElementsByName("my-tag").forEach(function (t) {
+        t.addEventListener("click", function (e) {
+          location.href = t.dataset.url;
+        });
       });
       const moveTo = function (src) {
         location.href = src;
