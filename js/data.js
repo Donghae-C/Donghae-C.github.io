@@ -12,8 +12,8 @@ let portfolioData = [
     img: "./img/kostaBank.png",
   },
   {
-    title: "myShop",
-    url: "./myShop/index.html",
+    title: "shop",
+    url: "./shop/index.html",
     content: "설명 추가 예정",
     img: "./img/myShop.png",
   },
